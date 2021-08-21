@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.loginContainer{
+    height: 100vh;
+    background-image: linear-gradient( to right, rgba(99,171,229,1), rgba(99,171,229,0));
+
+    > label{
+     font-size: 4rem;  
+     font-weight: normal !important; 
+    }
+}

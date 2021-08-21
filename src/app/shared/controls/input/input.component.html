@@ -1,0 +1,10 @@
+
+<ng-container *ngIf="text;else autoComplete">
+    <mat-form-field appearance="fill">
+        <!-- <mat-label>Favorite food</mat-label> -->
+        <input matInput
+        [placeholder]="placeholder" 
+        >
+      </mat-form-field>
+</ng-container>
+<ng-template #autoComplete></ng-template>
