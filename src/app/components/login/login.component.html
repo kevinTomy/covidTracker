@@ -1,7 +1,22 @@
 <div class="loginContainer" fxLayout="row" fxLayoutAlign="space-around center">
    <label for="appn_name">COVID TRACKER</label>
-<div class="loginCard" fxLayout="column">
-    dfdfdf
-    sdsdsd
-</div>
+        <form class="loginCard"  
+        [formGroup]="loginFG" 
+        (ngSubmit)="authenticateUser()"
+        fxLayout="column" fxLayoutGap="2rem">
+            <!-- username -->
+            <app-input
+            [type]="'text'"
+            [placeholder]="'username'"
+            [controlName]="loginFG.controls.username"
+            ></app-input>
+            <!-- password -->
+            <app-input
+            [type]="'password'"
+            [placeholder]="'password'"
+            [controlName]="loginFG.controls.pwd"
+            ></app-input>
+           
+            <button type="submit" [disabled]= "loginFG.invalid">Login</button>
+        </form>
 </div>

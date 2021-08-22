@@ -1,0 +1,12 @@
+<ng-container *ngIf="alert;else confirmation">
+    <div class="alertBox" fxLayout="row" fxLayoutAlign="space-around center">
+        <ng-container *ngIf="success;else close">
+        <mat-icon>check_circle</mat-icon>
+        </ng-container>
+        <ng-template #close>
+        <mat-icon>cancel</mat-icon>
+        </ng-template>
+        <div class="msg">{{message}}</div>
+    </div>
+</ng-container>
+<ng-template #confirmation></ng-template>

@@ -1,9 +1,12 @@
 
-<ng-container *ngIf="text;else autoComplete">
+<ng-container *ngIf="type;else autoComplete">
     <mat-form-field appearance="fill">
         <!-- <mat-label>Favorite food</mat-label> -->
-        <input matInput
+        <input
+         matInput
+        [type]="type"
         [placeholder]="placeholder" 
+        [formControl]="controlName"
         >
       </mat-form-field>
 </ng-container>
