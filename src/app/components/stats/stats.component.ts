@@ -38,12 +38,12 @@ export class StatsComponent implements OnInit , OnChanges{
   ngOnChanges(changes:SimpleChanges) {
 
     if(changes.result?.currentValue){
-      this.todaysCount[0].count = this.result.todayCases;
-      this.todaysCount[1].count = this.result.todayDeaths;
-      this.todaysCount[2].count = this.result.todayRecovered;
-      this.totalCount[0].count = this.result.cases;
-      this.totalCount[1].count = this.result.deaths;
-      this.totalCount[2].count = this.result.recovered;
+      this.todaysCount[0].count = this.result.todayCases?.toLocaleString('en-in');
+      this.todaysCount[1].count = this.result.todayDeaths?.toLocaleString('en-in');
+      this.todaysCount[2].count = this.result.todayRecovered?.toLocaleString('en-in');
+      this.totalCount[0].count = this.result.cases?.toLocaleString('en-in');
+      this.totalCount[1].count = this.result.deaths?.toLocaleString('en-in');
+      this.totalCount[2].count = this.result.recovered?.toLocaleString('en-in');
     }
 
   }
