@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountriesComponent } from './countries.component';
+import {InputComponent} from "../../shared/controls/input/input.component";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CountriesComponent } from './countries.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    InputComponent
   ]
 })
 export class CountriesModule { }

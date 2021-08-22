@@ -1,6 +1,9 @@
 <div class="countries" fxLayout="column">
-    <label >Countries</label>
-    
+    <div><label >Countries</label></div>
+    <app-input
+    [type]="text"
+    [placeholder]="Search by Country">
+    </app-input>
     <table mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="flag">
             <th mat-header-cell *matHeaderCellDef >  </th>

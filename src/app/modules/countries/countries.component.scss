@@ -2,8 +2,17 @@
     width: 97vw;
     height: 100vh;
     overflow-y: scroll;
-    > label{
+    //padding: 3rem 0;
+    > div:first-of-type{
+        width: 100%;
+        margin: 2rem;
+        position: sticky;
+        top: 0rem;
+        background-color: white;
+    }
+     label{
         font-size: 2.5rem !important;
+       
     }
     table{
         width: 96%;
@@ -12,6 +21,12 @@
             height: 3.5rem;
             width: 3rem;
             object-fit: contain;
+        }
+        ::ng-deep th.mat-header-cell{
+            position: sticky;
+            top: 1.9rem;
+            background: white;
+            z-index: 10;
         }
         ::ng-deep tr.mat-row{
             vertical-align: middle !important;
