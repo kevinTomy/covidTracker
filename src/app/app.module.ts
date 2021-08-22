@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { LoginComponent } from './components/login/login.component';
@@ -42,7 +43,8 @@ import { SideBarComponent } from './shared/components/side-bar/side-bar.componen
     MatIconModule,
     MatDialogModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

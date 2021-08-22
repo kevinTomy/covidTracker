@@ -14,4 +14,8 @@ export class CoronaStatsService {
     getCurrentStats():Observable<any>{
       return this.http.get(`${environment.baseUrl}all`)
     }
+
+    getCountryWiseStats():Observable<any>{
+      return this.http.get(`${environment.baseUrl}countries`);
+    }
 }
