@@ -1,0 +1,34 @@
+<div class="stats" fxLayout="column" fxLayoutGap="13rem">
+    <div class="total" fxLayout="column" fxLayoutGap="2rem">
+        <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="start center">
+            <label>Total</label> 
+            <div [ngStyle]="{'width': '87.5%', 'border-bottom': '1px solid #cccccc'}"></div>
+        </div>
+      
+        <div class="cardInfos" fxLayout="row" fxLayoutGap="10%">
+            <ng-container *ngFor="let item of totalCount">
+                <div class="card" fxLayout="column" fxFlex="25%" fxLayoutGap="2.5rem" fxLayoutAlign="center center">
+                    <label>{{item.cases}}</label>
+                    <label [ngStyle]="{'font-weight': 'bold'}">{{item.count}}</label>
+                </div>
+            </ng-container>
+        </div>
+        
+    </div>
+    <div class="today" fxLayout="column" fxLayoutGap="2rem">
+        <div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="start center">
+            <label>Today</label> 
+            <div [ngStyle]="{'width': '87.5%', 'border-bottom': '1px solid #cccccc'}"></div>
+        </div>
+        
+        <div class="cardInfos" fxLayout="row" fxLayoutGap="10%">
+            <ng-container *ngFor="let item of todaysCount">
+                <div class="card" fxLayout="column" fxFlex="25%" fxLayoutGap="2.5rem" fxLayoutAlign="center center">
+                    <label>{{item.cases}}</label>
+                    <label [ngStyle]="{'font-weight': 'bold'}">{{item.count}}</label>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+</div>

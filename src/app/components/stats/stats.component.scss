@@ -1,0 +1,17 @@
+@import "../../../assets/scss/variables.scss";
+label{
+    font-size: 2.5rem;
+    color: #cccccc;
+   
+}
+.card{
+    height: 10rem;
+    //width: 15rem;
+    border: 0.07rem solid $blue;
+    border-radius: 0.625rem;
+    word-break: break-word !important;
+    label{
+        font-size: 2rem !important;
+        color: $blue !important;
+    }
+}

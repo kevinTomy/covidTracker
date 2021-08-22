@@ -1,0 +1,16 @@
+<div class="home" fxLayout="row" fxLayoutGap="3%">
+    <div class="side-bar" fxFlex="5%" fxLayout="column" fxLayoutAlign="space-between center">
+        <div class="first-group" fxLayout="column" fxLayoutGap="2.5rem">  
+        <mat-icon id="icon-chart" matTooltip="Dashboard" (click)="switchTabs('dashboard')">table_chart</mat-icon>
+        <mat-icon id="icon-flag" matTooltip="Countries" (click)="switchTabs('countries')">flag</mat-icon>
+        </div>
+       
+        <mat-icon id="icon-power" matTooltip="Sign Out" (click)="switchTabs('logOff')">power_settings_new</mat-icon>
+    </div>
+    <div class="right-pane" fxFlex="92%">
+        <app-stats
+        *ngIf="currentScreen === 'dashboard'"
+        [result]="coronaUpdates"
+        ></app-stats>
+    </div>
+</div>

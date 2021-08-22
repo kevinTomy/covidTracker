@@ -3,7 +3,7 @@
         <form class="loginCard"  
         [formGroup]="loginFG" 
         (ngSubmit)="authenticateUser()"
-        fxLayout="column" fxLayoutGap="2rem">
+        fxLayout="column" fxLayoutGap="2rem" fxLayoutAlign="center center">
             <!-- username -->
             <app-input
             [type]="'text'"
@@ -17,6 +17,6 @@
             [controlName]="loginFG.controls.pwd"
             ></app-input>
            
-            <button type="submit" [disabled]= "loginFG.invalid">Login</button>
+            <button type="submit" class="active" [disabled]= "loginFG.invalid">Login</button>
         </form>
 </div>
