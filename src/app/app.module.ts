@@ -19,16 +19,16 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { LoginComponent } from './components/login/login.component';
 import { InputComponent } from './shared/controls/input/input.component';
 import { AlertPopupComponent } from './shared/components/alert-popup/alert-popup.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InputComponent,
     AlertPopupComponent,
-    DashboardComponent,
-    StatsComponent
+    StatsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

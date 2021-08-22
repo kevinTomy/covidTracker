@@ -1,12 +1,13 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import {CoronaStatsService} from "../../shared/services/corona-stats.service";
 
 @Component({
   selector: 'app-stats',
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']
 })
-export class StatsComponent implements OnInit , OnChanges{
-  @Input() result:any;
+export class StatsComponent implements OnInit {
+ 
   todaysCount :Array<any> =[{
     cases: 'Cases',
     count: 0
@@ -33,9 +34,9 @@ export class StatsComponent implements OnInit , OnChanges{
       count: 0
     }
   ]; 
-  constructor() { }
+  constructor(private service : CoronaStatsService) { }
 
-  ngOnChanges(changes:SimpleChanges) {
+  /* ngOnChanges(changes:SimpleChanges) {
 
     if(changes.result?.currentValue){
       this.todaysCount[0].count = this.result.todayCases?.toLocaleString('en-in');
@@ -46,9 +47,17 @@ export class StatsComponent implements OnInit , OnChanges{
       this.totalCount[2].count = this.result.recovered?.toLocaleString('en-in');
     }
 
-  }
+  } */
 
   ngOnInit(): void {
+    this.service.getCurrentStats().subscribe(res => {
+      this.todaysCount[0].count = res.todayCases?.toLocaleString('en-in');
+      this.todaysCount[1].count = res.todayDeaths?.toLocaleString('en-in');
+      this.todaysCount[2].count = res.todayRecovered?.toLocaleString('en-in');
+      this.totalCount[0].count = res.cases?.toLocaleString('en-in');
+      this.totalCount[1].count = res.deaths?.toLocaleString('en-in');
+      this.totalCount[2].count = res.recovered?.toLocaleString('en-in');
+    });
   }
 
 }

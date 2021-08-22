@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {CoronaStatsService} from "../../shared/services/corona-stats.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-side-bar',
+  templateUrl: './side-bar.component.html',
+  styleUrls: ['./side-bar.component.scss']
 })
-export class DashboardComponent implements OnInit {
-  currentScreen:string="dashboard";
+export class SideBarComponent implements OnInit {
+  currentScreen: string = 'dashboard';
   coronaUpdates:Array<any>= [];
-  constructor(private service : CoronaStatsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-
-    this.service.getCurrentStats().subscribe(res => this.coronaUpdates = res);
   }
   switchTabs(text:string){
     text == 'countries' ? 
