@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       dialogRef.componentInstance.success = true;
       dialogRef.componentInstance.alert = true;
       dialogRef.componentInstance.message = "Success!"; */
+      window.localStorage.setItem("isLoggedIn", "true");
       this.router.navigate(['/dashboard']);
     }
     else {

@@ -36,7 +36,8 @@ export class SideBarComponent implements OnInit {
         (document.getElementById('icon-power') as HTMLElement).style.borderColor = "#54f966" ,
         (document.getElementById('icon-flag') as HTMLElement).style.borderColor = "#0058a3",
         (document.getElementById('icon-chart') as HTMLElement).style.borderColor= " #0058a3" ,
-        this.router.navigate([''])
+        this.router.navigate(['']),
+        window.localStorage.removeItem("isLoggedIn")
       
       ) 
     )
