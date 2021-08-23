@@ -1,9 +1,18 @@
 <div class="countries" fxLayout="column">
     <div><label >Countries</label></div>
+    <div class="search-control" fxLayout="row" fxLayoutAlign="space-between center">
     <app-input
-    [type]="text"
-    [placeholder]="Search by Country">
+    [appearance]="'outline'"
+    [type]="'text'"
+    [placeholder]="'Search by Country'"
+    [controlName]="searchControl">
     </app-input>
+    <mat-paginator [pageSize]="10"
+    showFirstLastButtons 
+    >
+    </mat-paginator>
+    </div>
+       
     <table mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="flag">
             <th mat-header-cell *matHeaderCellDef >  </th>
@@ -41,10 +50,6 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-        <!-- <mat-paginator [pageSize]="10"
-        [length]="dataSource.data.length"
-        showFirstLastButtons 
-        >
-        </mat-paginator> -->
+        
     </table>
 </div>

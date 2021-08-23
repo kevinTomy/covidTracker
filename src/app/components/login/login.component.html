@@ -6,12 +6,14 @@
         fxLayout="column" fxLayoutGap="2rem" fxLayoutAlign="center center">
             <!-- username -->
             <app-input
+            [appearance]="'fill'"
             [type]="'text'"
             [placeholder]="'username'"
             [controlName]="loginFG.controls.username"
             ></app-input>
             <!-- password -->
             <app-input
+            [appearance]="'fill'"
             [type]="'password'"
             [placeholder]="'password'"
             [controlName]="loginFG.controls.pwd"

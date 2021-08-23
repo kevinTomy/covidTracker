@@ -9,6 +9,7 @@ export class InputComponent implements OnInit {
   @Input() type:any;
   @Input() placeholder:any;
   @Input() controlName:any;
+  @Input() appearance:any;
   constructor() { }
 
   ngOnInit(): void {

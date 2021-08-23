@@ -1,28 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {MatTableModule} from '@angular/material/table';
-import {MatSortModule} from "@angular/material/sort";
-import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatIconModule} from '@angular/material/icon';
+
 
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountriesComponent } from './countries.component';
-import {InputComponent} from "../../shared/controls/input/input.component";
+
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
   declarations: [
-    CountriesComponent
+    CountriesComponent,
+   
   ],
   imports: [
     CommonModule,
     CountriesRoutingModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatIconModule,
-    InputComponent
+    SharedModule
   ]
 })
 export class CountriesModule { }
