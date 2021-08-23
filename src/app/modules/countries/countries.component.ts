@@ -56,6 +56,13 @@ export class CountriesComponent implements OnInit , AfterViewInit {
             d.deaths.toLocaleString('en-in'),d.recovered.toLocaleString('en-in'),d.tests.toLocaleString('en-in'),
             d.population.toLocaleString('en-in'),d.countryInfo?.flag);
         });
+        if(history.state?.updatedCountryDetails){
+          this.countriesDetails =  this.countriesDetails.filter((item:any) => {
+           return  item.country !== history.state.updatedCountryDetails.country
+          });
+          this.countriesDetails.unshift(history.state?.updatedCountryDetails);
+         
+        }
         this.dataSource.data = JSON.parse(JSON.stringify(this.countriesDetails));
         //console.log(this.countriesDetails);
       });

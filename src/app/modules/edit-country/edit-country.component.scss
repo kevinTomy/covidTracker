@@ -1,0 +1,28 @@
+div.heading{
+    margin-top: 2rem;
+}
+
+.form-container{
+    width: 97vw;
+    padding-top: 10rem;
+}
+.editForm{
+    width: 35%;
+    margin: auto;
+    border: 0.0625rem solid #cccccc;
+    padding: 0.8rem;
+    > div {
+        width: 100%;
+    }
+}
+.case-control,
+.death-control,
+.recover-control,
+.test-control{
+    position: relative;
+    small{
+        position: absolute;
+        color: red;
+        margin-top: 4rem;
+    }
+}

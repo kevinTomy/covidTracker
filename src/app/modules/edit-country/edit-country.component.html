@@ -1,0 +1,83 @@
+
+<div class="heading" fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="start center">
+    <label [ngStyle]="{'color': '#cccccc' , 'font-size':'2.5rem'}"><span>Edit <span>{{updatedCountryDetails.country}}</span></span></label> 
+    <div [ngStyle]="{'width': '63%', 'border-bottom': '1px solid #cccccc'}"></div>
+</div>
+<div class="form-container">
+    
+    <form class="editForm"  
+    [formGroup]="countryFG" 
+    (ngSubmit)="updateDetails()"
+    fxLayout="column" fxLayoutGap="2rem" fxLayoutAlign="center center">
+       <div fxLayout="row" fxLayoutAlign="space-between center">
+
+        <!-- case control -->
+           <div class="case-control" fxLayout="column">
+            <app-input
+            [appearance]="'fill'"
+            [type]="'text'"
+            [placeholder]="'Cases'"
+            [controlName]="countryFG.controls.case"
+            ></app-input>
+            <small *ngIf="
+            (countryFG.get('case')?.touched || countryFG.get('case')?.dirty) &&
+            countryFG.get('case')?.errors?.emptyValue">Value can't be empty</small>
+            <small *ngIf="
+            (countryFG.get('case')?.touched || countryFG.get('case')?.dirty) &&
+            countryFG.get('case')?.errors?.nan">Only numbers are allowed</small>
+           </div>
+            <div class="death-control" fxLayout="column">  
+                <app-input
+                [appearance]="'fill'"
+                [type]="'text'"
+                [placeholder]="'Deaths'"
+                [controlName]="countryFG.controls.death"
+                ></app-input>
+                <small *ngIf="
+                (countryFG.get('death')?.touched || countryFG.get('death')?.dirty) &&
+                countryFG.get('death')?.errors?.emptyValue">Value can't be empty</small>
+                <small *ngIf="
+                (countryFG.get('death')?.touched || countryFG.get('death')?.dirty) &&
+                countryFG.get('death')?.errors?.nan">Only numbers are allowed</small>
+            </div>
+        
+       </div>
+    
+       <div fxLayout="row" fxLayoutAlign="space-between center">
+           <div class="recover-control" fxLayout="column">
+            <app-input
+            [appearance]="'fill'"
+            [type]="'text'"
+            [placeholder]="'Recovered'"
+            [controlName]="countryFG.controls.recover"
+            ></app-input>
+            <small *ngIf="
+            (countryFG.get('recover')?.touched || countryFG.get('recover')?.dirty) &&
+            countryFG.get('recover')?.errors?.emptyValue">Value can't be empty</small>
+            <small *ngIf="
+            (countryFG.get('recover')?.touched || countryFG.get('recover')?.dirty) &&
+            countryFG.get('recover')?.errors?.nan">Only numbers are allowed</small>
+           </div>
+           <div class="test-control" fxLayout="column">
+           
+            <app-input
+            [appearance]="'fill'"
+            [type]="'text'"
+            [placeholder]="'Tests'"
+            [controlName]="countryFG.controls.test"
+            ></app-input>
+            <small *ngIf="
+            (countryFG.get('test')?.touched || countryFG.get('test')?.dirty) &&
+            countryFG.get('test')?.errors?.emptyValue">Value can't be empty</small>
+            <small *ngIf="
+            (countryFG.get('test')?.touched || countryFG.get('test')?.dirty) &&
+            countryFG.get('test')?.errors?.nan">Only numbers are allowed</small>
+           </div>
+        
+       </div>
+        <div class="btns" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="0.3rem">
+            <button type="submit" class="secondary" [routerLink]="['/countries']">Cancel</button>
+            <button type="submit" class="active" [disabled]= "countryFG.invalid">Save</button>
+        </div>
+    </form>
+</div>

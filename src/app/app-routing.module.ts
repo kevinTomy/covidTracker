@@ -9,6 +9,7 @@ const routes: Routes = [
 {path:'login',component: LoginComponent},
 {path:'dashboard', component: StatsComponent},
 {path: 'countries', loadChildren: () => import('./modules/countries/countries.module').then(m => m.CountriesModule) },
+{ path: 'edit', loadChildren: () => import('./modules/edit-country/edit-country.module').then(m => m.EditCountryModule) },
 ];
 
 @NgModule({

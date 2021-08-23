@@ -44,7 +44,10 @@
           </ng-container>
           <ng-container matColumnDef="edit">
             <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-            <td mat-cell *matCellDef="let element"> <mat-icon>edit</mat-icon> </td>
+            <td mat-cell *matCellDef="let element"> <mat-icon
+              [routerLink]="['/edit']" 
+              [state]="{details: element}"
+              >edit</mat-icon> </td>
           </ng-container>
           <!-- rows -->
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
