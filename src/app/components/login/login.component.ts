@@ -11,8 +11,8 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
     loginCred= {
-      username : 'fingent',
-      pwd: 'fingent'
+      username : 'admin',
+      pwd: 'admin'
     };
     loginFG = new FormGroup(
     {
